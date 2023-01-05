@@ -1,0 +1,97 @@
+
+#welcome
+{
+    border-radius: 2rem;
+    width: 70%;
+    height: 80vh;
+    border-color: transparent;
+    min-height: 1vh;
+    min-width: 1vw;
+    /*
+        vh stands for viewport height 
+        rem stands for root element 
+    */
+}
+
+.img-fluid
+{
+    border-radius: 1rem; 
+    /* height: 70rem;
+    width: 100%; */
+    width: 100%;
+    height: 40vw;
+    
+}
+
+
+#welcome_text
+{
+    border-color: transparent;
+}
+
+#welcome_image
+{
+    background-color: transparent;
+    height: 100rem;
+    
+}
+
+
+#menu-header
+{
+    border-color: transparent;
+    background-color: transparent;   
+}
+
+
+.col
+{
+    padding: 5px 5px 5px 5px;
+    width: 10vw;
+    min-width: 200px;
+}
+
+/*
+    transition: transform .2s; defines the time taken to zoom 
+    transform: scale(1.5); defines how large this will get 
+*/
+
+#prod-img
+{
+    border-radius: 5px;
+    width: 10rem;
+    height: 10rem;
+    transition: transform .4s;
+}
+
+#prod-img:hover
+{
+    transform: scale(0.9);
+    z-index: 1;
+}
+#prod-img:hover + #prod-description
+{
+    visibility: visible;    
+}
+#prod-item
+{
+    border-color: transparent;
+    background-color: transparent;
+}
+#prod-header
+{
+    border-color: transparent;
+    background-color: transparent;
+}
+#prod-description
+{
+    visibility: hidden;
+    transition: transform .4s;
+}
+
+#prod-btn
+{
+    text-decoration:  none;
+    color: black;
+
+}

@@ -1,0 +1,94 @@
+/*
+colors from coolors 
+    29339B 
+    74A4BC
+    B6D6CC
+    F1FEC6
+    FF3A20
+*/
+
+
+
+.nav_lst
+{
+    font: 2em sans-serif;
+    width: 100%;
+    height: max-content;
+    list-style-type: none; /* defines the style of the list*/
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    display: inline-flex;
+    z-index: 100;
+}
+
+.nav_elm
+{
+    background-color: transparent;
+    font-style: normal;
+    /* color: #555;    */
+    display: flex;    
+}
+
+.item
+{
+    padding-right: 1rem;
+    margin-bottom: 0;
+    color: aliceblue;
+}
+
+
+.logo
+{
+    max-width: fit-content;
+    max-height: 3rem;
+    margin: 0;
+    padding: 0;
+    padding-right: 1rem;
+}
+a
+{
+    text-decoration-line: none; /* removes the underline in links */
+}
+.card
+{
+    /* border: 0px solid #333; */
+    border-radius: 1rem;
+    /* background-color: #0b1a1c;  */
+    margin: 0  auto;
+    margin-left: 15rem;
+    margin-right: 15rem;   
+    mix-blend-mode: exclusion;
+}
+img
+{
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    object-fit: fill; 
+}
+
+.card-bg
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-header
+{
+    text-align: center;
+}
+.mt-1
+{
+    margin-top: 1rem;
+}
+h1{ font-family: Sans-serif;}
+h2{ font-family: Sans-serif;}
+h3{ font-family: Sans-serif;}
+h4{ font-family: Sans-serif;}
+h5{ font-family: Sans-serif;}
+h6{ font-family: Sans-serif;}
+p{font-family: Sans-serif;}
