@@ -19,10 +19,17 @@
     </head>
     <body>
         <div class="card mt-1"> <!-- mt stands for margin top with 1rem-->
-            <h4 class="card-header" style="margin:0 auto;font-size: 5rem;">0xDEADBEEF</h4>
+            <h4 class="card-header" style="margin:0 auto;font-size: 5rem;">Who are we?</h4>
             <div class="card-bg">
                 <img src="/static/img/Ceaser salad made from circut componants.png" alt='Ceaser salad made from circut componants' id="welcome-img"> 
             </div>
+            <div class="info">
+                <p>
+                    This website does not actually sell anything, all pictures used in this website are generated using <a href="https://labs.openai.com/" >DALL·E </a>. <br>
+                    The <a href="https://github.com/goussous0">author</a> of this website is a cyber security student.
+                </p>
+            </div>
         </div>
+
     </body>
 </html>

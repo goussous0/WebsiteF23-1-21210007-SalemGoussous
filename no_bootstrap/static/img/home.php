@@ -19,9 +19,9 @@
     </head>
     <body>
         <div class="card mt-1"> <!-- mt stands for margin top with 1rem-->
-            <h4 class="card-header" style="margin:0 auto;font-size: 5rem;">0xDEADBEEF</h4>
+            <h4 class="card-header" style="margin:0 auto;font-size: 5rem;">Welcome to 0xDEADBEEF</h4>
             <div class="card-bg">
-                <img src="/static/img/Ceaser salad made from circut componants.png" alt='Ceaser salad made from circut componants' id="welcome-img"> 
+                <img src="/static/img/Ceaser salad made from circut componants.png" alt='Ceaser salad made from circut componants'> 
             </div>
         </div>
     </body>
