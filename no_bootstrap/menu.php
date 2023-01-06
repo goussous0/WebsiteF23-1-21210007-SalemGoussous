@@ -144,11 +144,8 @@
                         <button class="remove-button"> ➖</button>
                     </div>
                 </div>
-
-
             </div>
         </div>
-        
     </body>
 </html>
 

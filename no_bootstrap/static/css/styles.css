@@ -176,7 +176,7 @@ body
 #usr_info
 {
     height: auto;
-    border: 1px solid snow;
+    /* border: 1px solid snow; */
     align-self: flex-end;
     margin: auto;
 }
@@ -204,4 +204,31 @@ input
     align-self: center;
     margin: auto;
     height: 2rem;
+}
+
+
+
+
+.contacts
+{
+    text-align: center;
+}
+
+
+.fa-twitter,.fa-linkedin
+{
+    height: 100%;
+    width: 100%;
+}
+
+.fa
+{
+    width: 100px;
+    height: 100px; 
+    /* padding: 20px;
+    font-size: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px; */
 }

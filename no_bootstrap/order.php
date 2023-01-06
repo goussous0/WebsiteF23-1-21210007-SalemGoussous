@@ -19,21 +19,21 @@
     </head>
     <body>
         <div class="card mt-1"> <!-- mt stands for margin top with 1rem-->
-            <h4 class="card-header" style="margin:0 auto;font-size: 5rem;">Contact Us</h4>
-            <div class="card-bg">
-                <img src="/static/img/DALL·E 2022-12-29 12.48.56 - A table full of food that looks like computer parts, digital art .png" alt='Ceaser salad made from circut componants' id="welcome-img"> 
-            </div>
+            <h2 class="card-header" style="margin:0 auto;font-size: 3rem;">Order completed successfully</h2>
             <div class="info">
                 <p>
-                    This website does not actually sell anything, all pictures used in this website are generated using <a href="https://labs.openai.com/" >DALL·E </a>. <br>
-                    The <a href="https://github.com/goussous0">author</a> of this website is a cyber security student.
+                    Your order ID: 234234<br>
+                    Thank you for ordering, enjoy your meal.
                 </p>
+                <div class="card-bg">
+                    <img src="/static/img/DALL·E 2022-12-22 16.41.52 - A salad made from computer parts, digital art .png" alt='Ceaser salad made from circut componants' id="welcome-img"> 
+                </div>
             </div>
-            <div class="contacts">
-                <!-- I will not share my social media accounts this will redirect to the sites -->
-                <a href="https://twitter.com/" class="fa fa-twitter"></a>
-                <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
-            </div>
+            
         </div>
     </body>
 </html>
+
+<!--
+    DALL·E 2022-12-22 16.41.52 - A salad made from computer parts, digital art .png
+-->
