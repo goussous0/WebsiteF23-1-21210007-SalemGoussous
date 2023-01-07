@@ -29,6 +29,7 @@ colors from coolors
     font-style: normal;
     /* color: #555;    */
     display: flex;    
+    margin: 0.7rem;
 }
 
 .item
@@ -43,6 +44,7 @@ colors from coolors
     max-height: 3rem;
     margin: 0;
     padding: 0;
+    flex-grow: 1;
     padding-right: 1rem;
 }
 a
