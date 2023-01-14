@@ -45,12 +45,30 @@
     </head>
     <body>
     <?php
-        if (!isset($_SESSION['USER']) || !$_SESSION['USER']) {
-            header('Location: login.php');
+        session_start();
+        if (!isset($_SESSION['user']))
+        {
+            header("Location: login.php");
             die();
         }
+
+        // user is logged 
+
+        // check if post request
+        if ($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+            if ($_POST['add']) 
+            {
+                add_item($_POST['add']);
+            }
+            else if ($_POST['remove'])
+            {
+                remove_item($_POST['remove']);
+            }            
+        }
+
       ?>
-        <form>
+        <form method="POST" action="menu.php">
         <div class="card mt-1"> <!-- mt stands for margin top with 1rem-->
             <h1 class="card-header" style="margin:0 auto;font-size: 4rem;">Menu</h1>
             <div class="grid-lst">
@@ -58,55 +76,45 @@
                         <h4 class="card-header">CPU soup</h4>
                         <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.12.59 - a soup made with transistors .webp" alt="a soup made with transistors" id="menu-item" >
                         <div class="footer" >
-                            <h6 class="info" style="float: left;"> Price: 10$ </h6>
-                            <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                            <button name='add' class="add-button" value="10"> ➕</button>
-                            <button name='remove' class="remove-button" value="10"> ➖</button>
+                            <h5 class="info" style="float: left;"> Price: 10$ </h5>
+                            <button name='add' class="add-button" value="CPUSoup"> ➕</button>
+                            <button name='remove' class="remove-button" value="CPUSoup"> ➖</button>
                         </div>
                     </div>
                     <div class="grid-elm">
                     <h4 class="card-header">KeyCap soup</h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.20.43 - A 3D render a soup dish made with keyboad key caps in the soup .webp" alt="a soup dish made with keyboad key caps in the soup" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 10$ </h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 10$ </h5>
+                        <button name='add' class="add-button" value="KeyCapSoup"> ➕</button>
+                            <button name='remove' class="remove-button" value="KeyCapSoup"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Ethernet spaghetti</h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.26.16 - A 3D render of ethernet cables themed spagetti dish .webp" alt="A 3D render of ethernet cables themed spagetti dish" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 15$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 15$</h5>
+                        <button name='add' class="add-button" value="Ethspaghetti"> ➕</button>
+                            <button name='remove' class="remove-button" value="Ethspaghetti"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Bruschetta</h4>
                     <img class="card-bg" src="/static/img/DALL·E 2023-01-05 19.23.07 - a pizza that look like a CPU chip, digital art.webp" alt="a pizza that look like a CPU chip" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 10$ </h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 10$ </h5>
+                        <button name='add' class="add-button" value="Bruschetta"> ➕</button>
+                        <button name='remove' class="remove-button" value="Bruschetta"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Transistor Sushi </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.38.09 - Transistor tubes themed Sushi dish, digital art.webp" alt="Transistor tubes themed Sushi dish"id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 25$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 25$</h5>
+                        <button name='add' class="add-button" value="Transistor"> ➕</button>
+                        <button name='remove' class="remove-button" value="Transistor"> ➖</button>
                     </div>
                 </div>
 
@@ -114,77 +122,63 @@
                     <h4 class="card-header">Circuit Pizza </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2023-01-05 19.23.18 - a pizza that look like a CPU chip, digital art.webp" alt="a pizza that look like a CPU chip" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 20$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 20$</h5>
+                        <button name='add' class="add-button" value="CircuitPizza"> ➕</button>
+                        <button name='remove' class="remove-button" value="CircuitPizza"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Electronic Pizza </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2023-01-05 19.23.12 - a pizza that look like a CPU chip, digital art.webp" alt="a pizza that look like a CPU chip" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 25$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 25$</h5>
+                        <button name='add' class="add-button" value="ElecPizza"> ➕</button>
+                        <button name='remove' class="remove-button" value="ElecPizza"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">KeyCap soup </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.20.45 - A 3D render a soup dish made with keyboad key caps in the soup .webp" alt="a pizza that look like a CPU chip" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 12$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 12$</h5>
+                        <button name='add' class="add-button" value="KeyCapSoup"> ➕</button>
+                        <button name='remove' class="remove-button" value="KeyCapSoup"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Hotdog</h4>
                     <img class="card-bg" src="/static/img/DALL·E 2023-01-06 11.41.52 - A hotdog with computer DDR4 DIMMS stick instead of the hotdog itself, digital art .webp" alt="hotdog with computer DDR4 DIMMS stick instead of the hotdog itself" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 17$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 17$</h5>
+                        <button name='add' class="add-button" value="HotDog"> ➕</button>
+                        <button name='remove' class="remove-button" value="HotDog"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Mainboard </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.30.12 - A computer motherboard made from white chocolate, digital art.webp" alt="white chocolate motherboard" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 8$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 8$</h5>
+                        <button name='add' class="add-button" value="Mainboard"> ➕</button>
+                        <button name='remove' class="remove-button" value="Mainboard"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">LED spaghetti </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.26.20 - A 3D render of ethernet cables themed spagetti dish .webp" alt="LED spagetti " id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 13$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 13$</h5>
+                        <button name='add' class="add-button" value="LEDspaghetti"> ➕</button>
+                        <button name='remove' class="remove-button" value="LEDspaghetti"> ➖</button>
                     </div>
                 </div>
                 <div class="grid-elm">
                     <h4 class="card-header">Transistor Pizza </h4>
                     <img class="card-bg" src="/static/img/DALL·E 2022-12-22 16.27.30 - A 3D render of a pizza with electrical capacitors as the topping, digital art .webp" alt="Pizza with transistor caps" id="menu-item" >
                     <div class="footer" >
-                        <h6 class="info" style="float: left;"> Price: 27$</h6>
-                        <!-- adds or removes items from js array -->
-                            <button name='CPUSoup' style="display:none;" value="cpu_soup"></button>
-                        <button class="add-button"> ➕</button>
-                        <button class="remove-button"> ➖</button>
+                        <h5 class="info" style="float: left;"> Price: 27$</h5>
+                        <button name='add' class="add-button" value="TransistorPizza"> ➕</button>
+                        <button name='remove' class="remove-button" value="TransistorPizza"> ➖</button>
                     </div>
                 </div>
             </div>

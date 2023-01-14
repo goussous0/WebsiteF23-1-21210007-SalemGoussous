@@ -46,9 +46,29 @@
     </head>
     <body>
     <?php
-        header("Cache-Control: max-age=31536000");
-        header("Age: 100");
-      ?>
+        require("helpers.php");
+        session_start();
+        if ($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+
+            if (verify_user($user, $pass))
+            {
+                error_log("setting USER to " . $user);
+                // add user session 
+                $_SESSION['user'] = $user;
+                // add empty array to user session 
+                $_SESSION['items'] = array();
+                header('Location: menu.php');
+                die();
+            }
+            else
+            {
+                echo "<script> alert('Wrong credentials'); </script>";
+            }
+        }
+    ?>
         <div class="card mt-1"> <!-- mt stands for margin top with 1rem-->
             <h1 class="card-header" style="margin:0 auto;font-size: 4rem;">Login</h1>
             <style>
@@ -64,14 +84,14 @@
 
             </style>
             <div class="info">
-                <form method="POST" action="/cart.php">
+                <form method="POST" action="/login.php">
                         <div class="user-input">
                             <label for="fname">Username:</label>
-                            <input type="text" id="fname" name="fname">
+                            <input type="text" id="fname" name="username">
                         </div> 
                         <div class="user-input">
                             <label for="passwd">Password:</label>
-                            <input type="password" id="lname" name="passwd">
+                            <input type="password" id="lname" name="password">
                         </div> 
                         <div class="user-input">
                         <input type="submit" value="Submit" id="complete-order">
@@ -83,6 +103,3 @@
     </body>
 </html>
 
-<!--
-    DALL·E 2022-12-22 16.41.52 - A salad made from computer parts, digital art .webp
--->

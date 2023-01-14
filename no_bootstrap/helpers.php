@@ -66,35 +66,28 @@ function verify_user($user, $pass)
 		error_log("failed to connec to database");
 		return false;
 	}
-
 	// prep query 
 	$sql = "SELECT username, passhash FROM users WHERE username='". $user. "'";
-
-
 	$result = $conn->query($sql);
 	if (!$result)
 	{
 		error_log("Failed to query user ");
 	}
-
 	while ($row = $result->fetch_assoc())
 	{
-		if ($row)
+		if ($row['username'] == $user)
 		{
-			if ($row['username'] == $user)
+			// user found verify password 
+			$tmp = hash('sha256', $pass);
+			if( $tmp == $row['passhash'])
 			{
-				// user found verify password 
-				$tmp = hash('sha256', $pass);
-				if( $tmp == $row['passhash'])
-				{
-					error_log("user verified");
-					return true;
-				}
-				else
-				{
-					error_log("wrong password provided");
-					return false;
-				}
+				error_log("user verified");
+				return true;
+			}
+			else
+			{
+				error_log("wrong password provided");
+				return false;
 			}
 		}
 	}
@@ -132,5 +125,108 @@ function add_user($user, $pass)
 		return false;
 	}
 }
+
+
+
+function add_item($case)
+{
+	switch($case)
+	{
+		case "CPUSoup": 
+		{
+			break;
+		}
+		case "KeyCapSoup": 
+		{
+			break;
+		}
+		case "Ethspaghetti": 
+		{
+			break;
+		}
+		case "Bruschetta": 
+		{
+			break;
+		}
+		case "Transistor": 
+		{
+			break;
+		}
+		case "CircuitPizza": 
+		{
+			break;
+		}
+		case "ElecPizza": 
+		{
+			break;
+		}
+		case "HotDog": 
+		{
+			break;
+		}
+		case "Mainboard": 
+		{
+			break;
+		}
+		case "LEDspaghetti": 
+		{
+			break;
+		}
+																																																															
+		default:
+		break;
+	}
+}
+function remove_item($case)
+{
+	switch($case)
+	{
+		case "CPUSoup": 
+		{
+			break;
+		}
+		case "KeyCapSoup": 
+		{
+			break;
+		}
+		case "Ethspaghetti": 
+		{
+			break;
+		}
+		case "Bruschetta": 
+		{
+			break;
+		}
+		case "Transistor": 
+		{
+			break;
+		}
+		case "CircuitPizza": 
+		{
+			break;
+		}
+		case "ElecPizza": 
+		{
+			break;
+		}
+		case "HotDog": 
+		{
+			break;
+		}
+		case "Mainboard": 
+		{
+			break;
+		}
+		case "LEDspaghetti": 
+		{
+			break;
+		}
+																																																															
+		default:
+		break;
+	}
+}
+
+
 
 ?>

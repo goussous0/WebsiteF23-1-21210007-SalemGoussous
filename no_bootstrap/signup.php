@@ -62,6 +62,20 @@
                     error_log("User found in db");
                 } else {
                     error_log("no such user complete sign up");
+                if ($pass1 == $pass2) 
+                {
+                    // add new user to the databse
+                    if (add_user($user, $pass1)) {
+                        error_log("added " . $user . " to db");
+                    } else {
+                        error_log("Failed to add " . $user);
+                    }
+                } 
+                else 
+                {
+                    error_log("password mismatch ");
+                }
+
                 }
             }
         }

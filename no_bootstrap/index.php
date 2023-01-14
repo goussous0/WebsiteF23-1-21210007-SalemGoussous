@@ -46,7 +46,6 @@
     </head>
     <body>
     <?php
-        session_start();
 	    header("Cache-Control: max-age=31536000");
       	header("Age: 100");
 
