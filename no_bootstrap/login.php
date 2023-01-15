@@ -59,7 +59,17 @@
                 // add user session 
                 $_SESSION['user'] = $user;
                 // add empty array to user session 
-                $_SESSION['items'] = array();
+                $_SESSION['items'] = array(
+                    'CPUSoup' => 0,
+                    'KeyCapSoup' => 0,
+                    'Ethspaghetti'=> 0,
+                    'Bruschetta'=> 0,
+                    'Transistor'=> 0,
+                    'CircuitPizza'=> 0,
+                    'ElecPizza'=> 0,
+                    'HotDog'=> 0,
+                    'Mainboard'=> 0,
+                    'LEDspaghetti'=> 0);
                 header('Location: menu.php');
                 die();
             }

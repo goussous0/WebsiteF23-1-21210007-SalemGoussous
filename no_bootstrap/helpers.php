@@ -126,107 +126,23 @@ function add_user($user, $pass)
 	}
 }
 
-
+function view_cart()
+{
+	foreach ($_SESSION['items'] as $item) 
+	{
+		error_log($item);
+	}
+}
 
 function add_item($case)
 {
-	switch($case)
-	{
-		case "CPUSoup": 
-		{
-			break;
-		}
-		case "KeyCapSoup": 
-		{
-			break;
-		}
-		case "Ethspaghetti": 
-		{
-			break;
-		}
-		case "Bruschetta": 
-		{
-			break;
-		}
-		case "Transistor": 
-		{
-			break;
-		}
-		case "CircuitPizza": 
-		{
-			break;
-		}
-		case "ElecPizza": 
-		{
-			break;
-		}
-		case "HotDog": 
-		{
-			break;
-		}
-		case "Mainboard": 
-		{
-			break;
-		}
-		case "LEDspaghetti": 
-		{
-			break;
-		}
-																																																															
-		default:
-		break;
-	}
+	$_SESSION['items'][$case] += 1;
 }
 function remove_item($case)
 {
-	switch($case)
+	if ($_SESSION['items'][$case] > 0) 
 	{
-		case "CPUSoup": 
-		{
-			break;
-		}
-		case "KeyCapSoup": 
-		{
-			break;
-		}
-		case "Ethspaghetti": 
-		{
-			break;
-		}
-		case "Bruschetta": 
-		{
-			break;
-		}
-		case "Transistor": 
-		{
-			break;
-		}
-		case "CircuitPizza": 
-		{
-			break;
-		}
-		case "ElecPizza": 
-		{
-			break;
-		}
-		case "HotDog": 
-		{
-			break;
-		}
-		case "Mainboard": 
-		{
-			break;
-		}
-		case "LEDspaghetti": 
-		{
-			break;
-		}
-																																																															
-		default:
-		break;
+		$_SESSION['items'][$case] -= 1;
 	}
 }
-
-
-
 ?>

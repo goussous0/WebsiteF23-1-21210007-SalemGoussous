@@ -46,6 +46,7 @@
     <body>
     <?php
         session_start();
+        require("helpers.php");
         if (!isset($_SESSION['user']))
         {
             header("Location: login.php");
@@ -64,7 +65,11 @@
             else if ($_POST['remove'])
             {
                 remove_item($_POST['remove']);
-            }            
+            }
+            if ($_SESSION['items']) 
+            {
+                view_cart();
+            }
         }
 
       ?>
