@@ -1,0 +1,247 @@
+body
+{
+    background-color: #9FC2CC;
+}
+
+
+/* top waves */
+.custom-shape-divider-top-1674421796 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1674421796 svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 250px;
+}
+
+.custom-shape-divider-top-1674421796 .shape-fill {
+    fill: #331832;
+}
+
+/* top waves */
+
+
+/* bottom waves */
+.custom-shape-divider-bottom-1674422959 {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.custom-shape-divider-bottom-1674422959 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1674422959 .shape-fill {
+    fill:#331832
+}
+/* bottom waves */
+
+section{
+    max-width: 70vw;
+    margin: auto;
+    padding-top: 5rem; 
+    margin-bottom: 5rem;
+}
+
+#index_pic
+{
+    height: 65vh;
+    width: auto;
+    margin: auto;
+    margin-top: 0;
+    background-color:  transparent;
+    border-radius: 15px; 
+}
+
+image
+{
+    background-color: transparent;
+}
+
+.title
+{
+    text-align: center;
+}
+
+.footer
+{
+    background-color: #694D75;
+    position: relative;
+}
+
+.container
+{
+    display: flex;
+}
+
+.footer-col
+{
+    text-transform: capitalize;
+    margin: auto;
+    margin-top: 0;
+    z-index: 1;
+}
+
+h4
+{
+    color: #331832;
+    font-size: 1rem;
+    font-weight: bolder;
+    border-bottom: #331832;
+}
+
+.fab
+{
+    padding: 1vh;
+    color: #9FC2CC;
+}
+.footer-elm
+{
+    color: #9FC2CC;
+    padding-top: 0.5rem;
+}
+
+.grid
+{
+    display: flex;
+    margin: auto;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.grid-item
+{
+    margin: auto;
+    margin: 1rem 1rem 1rem 1rem;
+    /* display: flexbox; */
+    /* box-shadow: 10px 10px 5px #694D75;
+    border-radius: 10px;
+    border: #331832; */
+    background-color: #694D75;
+    border-radius: 10px;
+    flex: 1;
+    flex-grow: 1; 
+    /* max-width: max-content; */
+    width: auto;
+    
+}
+
+.grid-item-header,
+.grid-item-body
+{
+    margin: auto;
+    display: flex;
+}
+
+.grid-item-header
+{
+    width: 15rem;
+}
+
+
+.grid-item-body
+{
+    margin-top: 2rem;
+}
+
+.grid-item-pic
+{
+    margin: auto;
+    border-radius: 10px;
+    width: 10rem;
+    height: auto;
+    transition: 0.3s;
+}
+
+.grid-item-pic:hover
+{
+    scale: 1.3;
+    /* margin-top: 10px;  */
+}
+
+.grid-item-footer
+{
+    margin-top: 2rem;
+    display: flex;
+}
+.ctl
+{
+    margin:auto;
+}
+
+.title
+{
+    margin: auto;
+    text-transform: capitalize;
+}
+
+.footer-row
+{
+    margin: auto;
+    padding: 0;
+}
+
+
+.quest
+{
+    margin: auto;
+    border-bottom: groove 1px #331832;
+
+}
+.ans
+{
+    margin-bottom: 2vh;
+}
+
+#logo
+{
+    font-style: normal;
+}
+
+.container
+{
+    display: flex;
+}
+
+.pruple {background: #331832}
+.pink   {background: #694D75}
+.blue   {background: #1B5299}
+.cyan   {background: #9FC2CC}
+.cream  {background: #F1ECCE}
+
+
+/* 
+    make the picture look square on iphone
+*/
+@media (any-pointer: coarse) {
+    .index_pic
+    {
+        width: 80vw;
+        height: auto;
+        margin: auto;
+       /* margin-top: 0;*/
+        background-color:  transparent;
+        border-radius: 15px;
+    }
+}
