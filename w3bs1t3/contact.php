@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- google analytics -->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKPJEK5TDV"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MKPJEK5TDV');
+        </script>
         <title> Deadbeef | Contact </title>
         <!--https://www.w3schools.com/tags/tag_meta.asp-->
         <meta charset="UTF-8">
         <meta name="description" content="deadbeef">
-        <meta name="keywords" content="Keycap, Soup, pizza, deadbeef">
+        <meta name="keywords" content="you have, we have, menu, restaurant,ingredients,food,account,have you,you have to,i have you,you have it,have at you,having you,have you have,to have you,you have you,have are you,home our, deadbeef">
         <meta name="author" content="Salem Goussous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- update page every 30 seconds -->
@@ -17,6 +26,8 @@
         <link rel="stylesheet" href="/static/css/styles.css" media="screen" async>
         <!-- site manifest -->
         <link rel="manifest" href="/static/site.webmanifest">
+        <!-- site map -->
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/static/sitemap.xml" >
         <!--adding tab icon -->
         <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.webp">
@@ -65,6 +76,14 @@
                     document.getElementById('navbar_burger').classList.toggle('is-active');
                 })
             });
+
+            function prompt()
+            {
+                alert("Thank you for your feedback.");
+                window.location.href = "index.php";
+            }
+
+
         </script>
         <!--background-->
         <!--
@@ -101,7 +120,7 @@
                     <div class="field">
                         <label class="label">Email</Label>
                         <div class="control">
-                            <input class="input" type="email" placeholder="Enter your email" required>
+                            <input class="input" type="tel" placeholder="Enter your email" required>
                         </div>
                     </div>
                     <div class="field">
@@ -119,7 +138,7 @@
                 </div>
                 <div class="control">
                     <center>
-                        <button name="submit_btn" class="button is-primary" style="margin:1vh;" >Submit</button>
+                        <button name="submit_btn" class="button is-primary" style="margin:1vh;"  onclick="prompt()">Submit</button>
                     </center>
                 </div>
             <from>

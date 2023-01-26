@@ -38,11 +38,12 @@ function check_user($user) {
 				return false;
 			}
 		}
+		$result->free();
+		$conn->close();
 	}
 	else
 	{
 		// failed to query database
-		$result->free();
 		$conn->close();
 		return false;	
 	}
