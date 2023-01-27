@@ -101,11 +101,11 @@
                     }
                     else if ($type === "login")
                     {
-                        error_log("login");
+                        //error_log("login");
                         // authenticate user 
                         $usr1 = $_POST['usr1'];
                         $pass= $_POST['pass'];
-                        error_log(">>>".$usr1.$pass);
+                        //error_log(">>>".$usr1.$pass);
 
                         if (check_user($usr1) && verify_user($usr1, $pass))
                         {
@@ -170,7 +170,7 @@
         <!--actual content-->
         
         <section >
-            <form action="account.php" method="POST">
+            <form action="account.php" method="POST" novalidate>
                 <!-- login in page -->
                 <div class="card" style="background-color:  transparent; box-shadow: 0 0;" id="login_form">
                     <header class="card-header" style="box-shadow: 0 0;">
@@ -182,13 +182,13 @@
                     <div class="field">
                         <label class="label">Username</Label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Enter your username" name="usr1" require>
+                            <input class="input" type="text" placeholder="Enter your username" name="usr1" required>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Pasword</Label>
                         <div class="control">
-                            <input class="input" type="password" placeholder="Enter your password" name="pass" require>
+                            <input class="input" type="password" placeholder="Enter your password" name="pass" required>
                         </div>
                     </div>
                 </div>
@@ -202,25 +202,25 @@
                     <div class="field">
                         <label class="label">Username</Label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Enter your username" name="usr" require>
+                            <input class="input" type="text" placeholder="Enter your username" name="usr" required>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Pasword</Label>
                         <div class="control">
-                            <input class="input" type="password" placeholder="Enter your password" name="pass1" require>
+                            <input class="input" type="password" placeholder="Enter your password" name="pass1" required>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Pasword again</Label>
                         <div class="control">
-                            <input class="input" type="password" placeholder="Enter your password again" name="pass2" require>
+                            <input class="input" type="password" placeholder="Enter your password again" name="pass2" required>
                         </div>
                     </div>
                 </div>
                 <div class="control">
                     <center>
-                        <button id="submit_btn" name="submit_btn" class="button is-primary" style="padding: 10px;margin:10px;" value="login">Submit</button>
+                        <button type="submit" id="submit_btn" name="submit_btn" class="button is-primary" style="padding: 10px;margin:10px;" value="login">Submit</button>
                     </center>
                 </div>
                 <center>

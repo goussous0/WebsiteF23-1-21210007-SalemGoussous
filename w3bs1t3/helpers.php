@@ -25,7 +25,15 @@ function check_user($user) {
 
 	$sql = "SELECT username FROM users WHERE username='" . $user . "'";
 	
-	$result = $conn->query($sql);
+	try {
+		$result = $conn->query($sql);
+	} catch (Exception $e)
+	{
+		//error_log($e);
+		echo "<script> alert('Faulty SQL syntax, this will be reported') </script>";
+		$conn->close();
+		return false;
+	}
 
 	if ($result)
 	{

@@ -84,10 +84,17 @@
             {
                 let cart_count = document.getElementById('cart_count');
                 let cart_sum = document.getElementById('cart_sum');
-                let order_id = Math.floor(Math.random() * 1000000);
+                if (cart_count)
+                {
+                    let order_id = Math.floor(Math.random() * 1000000);
 
-                alert("Your Order ID:  "+order_id+"\nEnjoy Your meal.");
-                window.location.href = "index.php";
+                    alert("Your Order ID:  "+order_id+"\nEnjoy Your meal.");
+                    window.location.href = "index.php";
+                }
+                else
+                {
+                    alert("Your cart is empty.");
+                }
             }
         </script>
         <!--background-->
